@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+def no_c(my_string):
+    new = [i for i in my_string if i != 'c' and i != 'C']
+    rerurn ("".join(new))
