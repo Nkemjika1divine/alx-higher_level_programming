@@ -1,0 +1,54 @@
+# 0-add_integer.txt
+
+============================================================
+This file describes the functionalities of 0-add_integer.py
+===========================================================
+
+# How to use add function "add_integer(a, b=98)"
+
+It returns the sum of two arguments using the "+" operator
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+
+It should also work for floating point numbers
+
+>>> add_integer(2, -5)
+-3
+
+It should ensure that floats are casted into integers
+
+>>> add_integer(2.5, 4.4)
+6
+
+It should ensure that the second number is optional
+
+>>> add_integer(2)
+100
+
+It should raise an exception when one of the values is not a float or an int
+
+>>> add_integer(2, "hello")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("hello", 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+It should raise an exception when None is passed in both arguments
+
+>>> add_integer(2, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+It should raise an eexception for the first argument when non-floats on non-ints are passed to the args
+
+>>> add_integer("hi", "I am")
+Traceback (most recent call last):
+TypeError: a must be an integer
