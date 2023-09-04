@@ -3,7 +3,15 @@
 
 
 class Rectangle:
-    """Initializing the class"""
+    """Initializing the class
+
+    Attributes:
+        number_of_instances (int): number of objects at a time
+        print_symbol: used to print a represebtation of the rectangle
+    """
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Describing the init method
@@ -12,6 +20,9 @@ class Rectangle:
             Width (int): the width of the rectangle
             Height (int): the height of the rectangle
         """
+
+        type(self).number_of_instances += 1
+
         self.width = width
         self.height = height
 
@@ -52,3 +63,20 @@ class Rectangle:
         if (self.__width == 0) or (self.__height == 0):
             return (0)
         return (2 * (self.__width + self.__height))
+
+    def __str__(self):
+        """returns a reoresentatiok of the rectangle using #"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        return ("\n".join(["#" * self.__width] * self.__height))
+
+    def __repr__(self):
+        """returns string reoresetaion of rectangle"""
+        r = "Rectangle(" + str(self.__width)
+        r += ", " + str(self.__height) + ")"
+        return (r)
+
+    def __del__(self):
+        """prints a message when an instance is deleted"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
