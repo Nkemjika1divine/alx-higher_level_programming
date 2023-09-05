@@ -1,0 +1,41 @@
+# 4-print_square.txt
+
+============================================================
+This file describes the functionalities of 4-print_square.py
+============================================================
+
+# How to print a string using print_square(size)
+
+This function prints a square with the character #
+
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(4)
+####
+####
+####
+####
+
+It prints an empty string if 0 is passed to it
+>>> print_square(0)
+<BLANKLINE>
+
+It prints one # when 1 is passed to it
+
+>>> print_square(1)
+#
+
+It prints a error message if a negative value or a non int/float value is passed to it
+
+>>> print_square("bounce")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+It prints an error message when nothing is passed to it
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
