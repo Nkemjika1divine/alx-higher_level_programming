@@ -20,7 +20,6 @@ Returns a list in an ordered manner
 [2, 9, 44, 76, 98]
 >>> print(my_list)
 [98, 44, 2, 9, 76]
->>>
 
 Returns a NameError if object isn't defined
 
@@ -28,7 +27,6 @@ Returns a NameError if object isn't defined
 >>> Decent_list.print_sorted()
 Traceback (most recent call last):
 NameError: name 'Decent_list' is not defined
->>>
 
 You can pass a list as a parameter to it
 
@@ -36,7 +34,6 @@ You can pass a list as a parameter to it
 >>> my_list = MyList(a)
 >>> my_list.print_sorted()
 [1, 4, 9]
->>>
 
 It sorts an empty list
 
@@ -44,7 +41,6 @@ It sorts an empty list
 >>> my_list = MyList(no_list)
 >>> my_list.print_sorted()
 []
->>>
 
 It sorts just one integer
 
@@ -54,7 +50,6 @@ It sorts just one integer
 [1]
 >>> print(my_list)
 [1]
->>>
 
 It sorts the same number multiple times
 
@@ -65,7 +60,6 @@ It sorts the same number multiple times
 >>> my_list2.append(1)
 >>> my_list2.print_sorted()
 [1, 1, 1, 1]
->>>
 
 It doesn't sort a parent object
 
@@ -73,4 +67,3 @@ It doesn't sort a parent object
 >>> my_list.print_sorted()
 Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'print_sorted'
->>>
