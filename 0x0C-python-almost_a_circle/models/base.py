@@ -12,7 +12,7 @@ class Base:
         """Args:
         id = increments the class attribute if nothing is passed
         """
-        if id == None:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
@@ -21,7 +21,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns a JSON represebtation of a list of dictionaries"""
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return json.dumps([])
         if type(list_dictionaries) == list:
             if len(list_dictionaries) == 0:
@@ -32,7 +32,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """writes a json string representation of list_objs to a file"""
-        if list_objs == None:
+        if list_objs is None:
             files = []
         elif type(list_objs) is list:
             files = [i.to_dictionary() for i in list_objs]
@@ -43,7 +43,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns a list of json string representation"""
-        if json_string == None:
+        if json_string is None:
             return []
         if type(json_string) == str:
             if len(json_string) == 0:
@@ -66,7 +66,7 @@ class Base:
         """loads json from a file"""
         filename = "{}.json".format(cls.__name__)
         obj = []
-        if filename == True:
+        if filename is True:
             with open(filename, "r") as f:
                 line = f.readline()
                 final_list = Base.from_json_string(line)

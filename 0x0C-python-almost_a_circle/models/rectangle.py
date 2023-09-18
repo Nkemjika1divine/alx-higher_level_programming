@@ -81,7 +81,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """returns a represemtation of the rectangle using " " and "#" characters"""
+        """returns a represemtation of the rectangle using " " and "#" chars"""
         for _ in range(self.y):
             print()
         for _ in range(self.height):
@@ -89,7 +89,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns a atring representation of the rectangle"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} -"\
+            " {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """sets the values of the constructor using args and kwargs"""
@@ -119,4 +120,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of the rectangle"""
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+}
