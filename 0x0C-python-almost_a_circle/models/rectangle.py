@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """A Rectangle Module"""
+import turtle
 from models.base import Base
 
 
@@ -126,4 +127,46 @@ class Rectangle(Base):
             'id': self.id,
             'height': self.height,
             'width': self.width
-}
+        }
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """drawing rectangles and squares with the turtle module"""
+        screen = turtle.Screen()
+        draw = turtle.Turtle()
+
+        screen.setup(width=50, height=50)
+
+        screen.bgcolor("white")
+        draw.pensize(5)
+        draw.shape("turtle")
+
+        draw.color("red")
+
+        for i in list_rectangles:
+            draw.showturtle()
+            draw.up()
+            draw.goto(i.x, i.y)
+            draw.down()
+            for j in range(2):
+                draw.forward(i.width)
+                draw.left(90)
+                draw.forward(i.height)
+                draw.left(90)
+            draw.hideturtle()
+
+        draw.color("blue")
+
+        for i in list_squares:
+            draw.showturtle()
+            draw.up()
+            draw.goto(i.x, i.y)
+            draw.down()
+            for j in range(2):
+                draw.forward(i.size)
+                draw.left(90)
+                draw.forward(i.size)
+                draw.left(90)
+            draw.hideturtle()
+        
+        turtle.exitonclick()
