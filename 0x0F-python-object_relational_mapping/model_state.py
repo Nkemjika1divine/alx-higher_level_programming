@@ -1,23 +1,21 @@
 #!/usr/bin/python3
-"""This links a class to a table in database
+"""model state
 """
-import sys
-from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-if __name__ == "__main__":
-    engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost/{}".format(
-            sys.argv[1], sys.argv[2], sys.argv[3]
-        ),
-        pool_pre_ping=True,
-    )
-    Base.metadata.create_all(engine)
+Base = declarative_base()
 
-    """The create_engine method creates a connection to the database.
-    It takes some parameters, a link to the database and some other parameters
-    -> pool_pre_ping pings the database to know if the connection exists.
-    If the connection doesn't exist, it creates the connection
-    -> Base.metadata.create_all establishes the operation
-    Base.metadata.create_all(engine)
+
+class State(Base):
+    """ This is a State class inheriting from Base """
+    __tablename__ = 'states'
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
+
+    """First you import the sqlalchemy module and then you import th necessary
+    tools needed for the table you wantto create eg Column, Integer, etc...
+    Thrn you import declarative_base from sqlalchemy.ext.declarative
+    It will be used to creatr thr table class
     """
