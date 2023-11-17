@@ -29,7 +29,7 @@ if __name__ == "__main__":
     for data in complete_data:
         state_tuple = state_tuple + data
 
-    print(*state_tuple, sep=", ")
+    print(*states_tuple, sep=", ")
 
     cursor.close()
     db.close()
