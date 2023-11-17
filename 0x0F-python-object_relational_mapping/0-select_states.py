@@ -14,7 +14,8 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect(host=host, user=_name, passwd=pwd, db=name, port=port)
 
-    cursor = db.cursor(my_query)
+    cursor = db.cursor()
+    cursor.execute(my_query)
 
     complete_data = cursor.fetchall()
 
