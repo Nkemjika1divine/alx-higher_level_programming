@@ -9,4 +9,5 @@ if __name__ == "__main__":
         data = response.read()
         print(f"Body response:")
         print(f"\t- type: {type(data)}")
+        print(f" \t- content: {data}")
         print(f"\t- uft8 content: {data.decode('utf-8')}")
