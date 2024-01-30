@@ -3,7 +3,7 @@
 const request = require('request');
 const args = process.argv;
 
-request(args[3], (err, response) => {
+request(args[2], (err, response) => {
   if (err) {
     console.error(err);
   } else {
