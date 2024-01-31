@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-// computes the number of tasks completed by user id
+// prints the list of characters in a movie id passed as argument
 const request = require('request');
 // const fs = require('fs');
 const args = process.argv;
