@@ -4,7 +4,6 @@
 const request = require('request');
 // const fs = require('fs');
 const args = process.argv;
-const film = args[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${args[2]}`;
 
 request(url, (err, code, body) => {
@@ -16,7 +15,7 @@ request(url, (err, code, body) => {
         if (err) {
           console.error(err);
         } else {
-          console.log(JSON.parse(body).name);
+  i        console.log(JSON.parse(body).name);
         }
       });
     }
